@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smartstock - Predictive Demand Intelligence</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-boxes-stacked text-purple"></i>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-title">smartstock</span>
+                        <span class="brand-subtitle">Demand Intelligence AI</span>
+                    </div>
+                </div>
+                <div class="status-indicator">
+                    <span class="status-dot pulsing"></span>
+                    <span class="status-text">Forecasting Engine Active</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <button class="nav-item active" data-tab="overview">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard Overview</span>
+                </button>
+                <button class="nav-item" data-tab="predictor">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Demand Predictor</span>
+                </button>
+
+                <button class="nav-item" data-tab="insights">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>Model Insights</span>
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Operations Manager</span>
+                        <span class="user-role">SmartStock Hub #4</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-title-area">
+                    <h1 id="page-title">Dashboard Overview</h1>
+                    <p class="header-description" id="page-subtitle">Real-time sales telemetry, weather correlations, and stock optimization.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="date-badge">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span id="current-time-badge">June 16, 2026</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                
+                <!-- ================= TAB: OVERVIEW ================= -->
+                <section id="tab-overview" class="tab-content active">
+                    <!-- KPI Cards Grid -->
+                    <div class="kpi-grid">
+                        <div class="kpi-card glass">
+                            <div class="kpi-header">
+                                <span class="kpi-title">Orders Analyzed</span>
+                                <div class="kpi-icon bg-purple-dim"><i class="fa-solid fa-basket-shopping text-purple"></i></div>
+                            </div>
+                            <div class="kpi-value" id="kpi-total-orders">--</div>
+                            <div class="kpi-footer">
+                                <span class="text-green"><i class="fa-solid fa-arrow-up"></i> 600 days</span>
+                                <span class="text-muted">historical series</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card glass">
+                            <div class="kpi-header">
+                                <span class="kpi-title">Sales Revenue</span>
+                                <div class="kpi-icon bg-green-dim"><i class="fa-solid fa-indian-rupee-sign text-green"></i></div>
+                            </div>
+                            <div class="kpi-value" id="kpi-total-revenue">₹--</div>
+                            <div class="kpi-footer">
+                                <span class="text-muted">Avg: </span>
+                                <span class="text-white" id="kpi-avg-order-val">₹--</span>
+                                <span class="text-muted">per order</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card glass">
+                            <div class="kpi-header">
+                                <span class="kpi-title">Average Stock Price</span>
+                                <div class="kpi-icon bg-blue-dim"><i class="fa-solid fa-tags text-blue"></i></div>
+                            </div>
+                            <div class="kpi-value text-blue" id="kpi-avg-stock-price">₹--</div>
+                            <div class="kpi-footer">
+                                <span class="text-muted">Mean price of stock items</span>
+                            </div>
+                        </div>
+
+                        <div class="kpi-card glass">
+                            <div class="kpi-header">
+                                <span class="kpi-title">Holiday Volume Impact</span>
+                                <div class="kpi-icon bg-purple-dim"><i class="fa-solid fa-calendar-day text-purple"></i></div>
+                            </div>
+                            <div class="kpi-value text-purple" id="kpi-holiday-lift">+--%</div>
+                            <div class="kpi-footer">
+                                <span class="text-muted">Holiday vs non-holiday sales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts & Filters -->
+                    <div class="grid-2col">
+                        <div class="chart-container glass main-chart-box">
+                            <div class="chart-header">
+                                <h3>Historical Sales & Demand Trends</h3>
+                                <div class="chart-filters">
+                                    <select id="category-filter" class="form-select">
+                                        <option value="all">All Categories</option>
+                                    </select>
+                                    <select id="time-filter" class="form-select">
+                                        <option value="all">Entire Range</option>
+                                        <option value="30">Last 30 Days</option>
+                                        <option value="90">Last 90 Days</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <canvas id="historicalChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-container glass correlation-box">
+                            <div class="chart-header">
+                                <h3>Weather, Holiday & Price Impact</h3>
+                            </div>
+                            <div class="chart-wrapper flex-center">
+                                <div class="correlation-stats">
+                                    <div class="corr-row">
+                                        <div class="corr-label">
+                                            <i class="fa-solid fa-indian-rupee-sign text-purple"></i>
+                                            <span>Price of Stock (Elasticity Effect)</span>
+                                        </div>
+                                        <div class="corr-progress-bar">
+                                            <div class="progress bg-purple" id="corr-price-bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="corr-val" id="corr-price-val">--</div>
+                                    </div>
+                                    <div class="corr-row">
+                                        <div class="corr-label">
+                                            <i class="fa-solid fa-umbrella text-blue"></i>
+                                            <span>Monsoon Rainfall Influence</span>
+                                        </div>
+                                        <div class="corr-progress-bar">
+                                            <div class="progress bg-blue" id="corr-monsoon-bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="corr-val" id="corr-monsoon-val">--</div>
+                                    </div>
+                                    <div class="corr-row">
+                                        <div class="corr-label">
+                                            <i class="fa-solid fa-sun text-orange"></i>
+                                            <span>High Summer Temperature Lift</span>
+                                        </div>
+                                        <div class="corr-progress-bar">
+                                            <div class="progress bg-orange" id="corr-summer-bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="corr-val" id="corr-summer-val">--</div>
+                                    </div>
+                                    <div class="corr-row">
+                                        <div class="corr-label">
+                                            <i class="fa-solid fa-gift text-red"></i>
+                                            <span>Holiday Spikes (Diwali/Holi)</span>
+                                        </div>
+                                        <div class="corr-progress-bar">
+                                            <div class="progress bg-red" id="corr-festival-bar" style="width: 0%"></div>
+                                        </div>
+                                        <div class="corr-val" id="corr-festival-val">--</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ================= TAB: PREDICTOR ================= -->
+                <section id="tab-predictor" class="tab-content">
+                    <div class="grid-layout-predictor">
+                        <!-- Inputs Card -->
+                        <div class="card glass input-card-predictor">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-gears text-purple"></i> Prediction Parameters</h3>
+                                <p class="card-subtitle">Set weather, holidays, and price factors to forecast demand.</p>
+                            </div>
+                            <div class="card-body">
+                                <form id="prediction-form" class="prediction-inputs-form">
+                                    
+                                    <!-- Date & Holiday -->
+                                    <h4 class="section-title text-purple mt-0">Holidays & Calendar</h4>
+                                    <div class="form-group">
+                                        <label for="pred-date"><i class="fa-regular fa-calendar-days text-muted"></i> Target Date</label>
+                                        <input type="date" id="pred-date" class="form-input" value="2026-06-17">
+                                    </div>
+                                    <div class="form-group flex-row align-center checkbox-group mt-1">
+                                        <input type="checkbox" id="pred-holiday" class="form-checkbox">
+                                        <label for="pred-holiday" style="margin-left:8px;cursor:pointer;"><b>Is Holiday?</b> (Diwali/Eid/National Day)</label>
+                                    </div>
+
+                                    <!-- Weather -->
+                                    <h4 class="section-title text-purple mt-3">Weather Conditions</h4>
+                                    <div class="form-group">
+                                        <label><i class="fa-solid fa-umbrella text-blue"></i> Weather State</label>
+                                        <select id="pred-weather-state" class="form-select">
+                                            <option value="clear">Clear Skies</option>
+                                            <option value="light_rain">Light Rain</option>
+                                            <option value="heavy_rain">Heavy Rain / Storm</option>
+                                            <option value="overcast">Overcast / Cloud</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pred-temp"><i class="fa-solid fa-thermometer-half text-orange"></i> Temperature (°C)</label>
+                                        <div class="range-container">
+                                            <input type="range" id="pred-temp" class="form-range" min="10" max="45" value="30">
+                                            <span class="range-val" id="pred-temp-val">30°C</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Price of the Stock -->
+                                    <h4 class="section-title text-purple mt-3">Price of the Stock</h4>
+                                    <div class="form-group">
+                                        <label for="pred-price"><i class="fa-solid fa-tag text-purple"></i> Avg Price of Items Sold (INR)</label>
+                                        <div class="range-container">
+                                            <input type="range" id="pred-price" class="form-range" min="200" max="1200" value="520">
+                                            <span class="range-val" id="pred-price-val">₹520</span>
+                                        </div>
+                                        <p class="input-help-text mt-1">Increasing item price generally lowers demand (negative price elasticity).</p>
+                                    </div>
+
+                                    <div class="form-group mt-4">
+                                        <label for="pred-category"><i class="fa-solid fa-list text-purple"></i> Forecast Category</label>
+                                        <select id="pred-category" class="form-select">
+                                            <option value="all">Total Warehouse Orders</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Prediction Output Dashboard -->
+                        <div class="predictor-results-area">
+                            <!-- Unified Demand Forecast Card -->
+                            <div class="card glass model-output-card glow-purple">
+                                <div class="model-badge font-outfit">UNIFIED DEMAND FORECAST (ENSEMBLE MODEL)</div>
+                                <div class="prediction-main-row">
+                                    <div class="pred-kpi">
+                                        <span class="pred-kpi-label">Predicted Demand</span>
+                                        <span class="pred-kpi-value text-purple" id="forecast-orders">0</span>
+                                        <span class="pred-kpi-unit">orders</span>
+                                    </div>
+                                    <div class="pred-kpi line-left">
+                                        <span class="pred-kpi-label">Predicted Sales</span>
+                                        <span class="pred-kpi-value text-white" id="forecast-sales">₹0</span>
+                                        <span class="pred-kpi-unit">sales revenue</span>
+                                    </div>
+                                </div>
+                                <div class="prediction-explanation">
+                                    <h4 class="text-muted"><i class="fa-solid fa-circle-info"></i> Drivers of this Prediction:</h4>
+                                    <div class="waterfall-container" id="ridge-waterfall">
+                                        <!-- Dynamically populated waterfall bars -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- ================= TAB: INSIGHTS ================= -->
+                <section id="tab-insights" class="tab-content">
+                    <div class="grid-2col">
+                        <!-- Model Performance Card -->
+                        <div class="card glass">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-square-poll-vertical text-purple"></i> Statistical Model Validation</h3>
+                                <p class="card-subtitle">Evaluation metrics split between training (80%) and testing (20%) datasets.</p>
+                            </div>
+                            <div class="card-body">
+                                <table class="metrics-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Model / Metric</th>
+                                            <th>R² Score (R-Squared)</th>
+                                            <th>MAE (Mean Abs Error)</th>
+                                            <th>RMSE (Root Mean Sq Error)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><b class="text-purple">Ridge Regression (Train)</b></td>
+                                            <td id="m-ridge-train-r2">--</td>
+                                            <td id="m-ridge-train-mae">--</td>
+                                            <td id="m-ridge-train-rmse">--</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b class="text-purple-dim" style="color: rgba(139, 92, 246, 0.7);">Ridge Regression (Test)</b></td>
+                                            <td id="m-ridge-test-r2">--</td>
+                                            <td id="m-ridge-test-mae">--</td>
+                                            <td id="m-ridge-test-rmse">--</td>
+                                        </tr>
+                                        <tr class="border-top-thick">
+                                            <td><b class="text-green">Decision Tree (Train)</b></td>
+                                            <td id="m-dt-train-r2">--</td>
+                                            <td id="m-dt-train-mae">--</td>
+                                            <td id="m-dt-train-rmse">--</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b class="text-green-dim" style="color: rgba(16, 185, 129, 0.75);">Decision Tree (Test)</b></td>
+                                            <td id="m-dt-test-r2">--</td>
+                                            <td id="m-dt-test-mae">--</td>
+                                            <td id="m-dt-test-rmse">--</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                                <div class="note-box mt-4">
+                                    <h4><i class="fa-solid fa-circle-exclamation text-purple"></i> Data Science Insight: Weather, Holiday & Price Elasticity</h4>
+                                    <p>Our model evaluates future demand based exclusively on weather conditions (temperature, rain), holiday indicators, and the price of the stock items. In particular, the <b>Stock Price Coefficient</b> shows a negative value, confirming that higher stock prices lead to reduced order frequencies.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weights Card -->
+                        <div class="card glass">
+                            <div class="card-header">
+                                <h3><i class="fa-solid fa-circle-nodes text-green"></i> Linear Equation Weights (Coefficients)</h3>
+                                <p class="card-subtitle">Direct impact of each normalized factor on overall demand.</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-wrapper">
+                                    <canvas id="insightsWeightsChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

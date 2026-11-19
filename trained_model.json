@@ -1,0 +1,1420 @@
+{
+  "features": [
+    "constant",
+    "temperature",
+    "rainfall",
+    "is_rainy",
+    "is_holiday",
+    "avg_price"
+  ],
+  "scale_params": {
+    "temperature": {
+      "mean": 30.16687499999999,
+      "std": 7.570546451063381
+    },
+    "rainfall": {
+      "mean": 5.3097916666666665,
+      "std": 12.79342474176732
+    },
+    "avg_price": {
+      "mean": 1129.434125000001,
+      "std": 330.18725373526206
+    }
+  },
+  "models": {
+    "total_orders": {
+      "ridge": {
+        "weights": [
+          8.269962798770488,
+          -0.19242608979748008,
+          -0.2648850941135827,
+          0.6748447947098617,
+          -0.1890636931049074,
+          -0.018563978333036593
+        ],
+        "metrics": {
+          "train": {
+            "mae": 2.39,
+            "rmse": 3,
+            "r2": 0.006
+          },
+          "test": {
+            "mae": 2.54,
+            "rmse": 3.12,
+            "r2": -0.03
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": -1.58742991763169,
+          "left": {
+            "featureIndex": 1,
+            "threshold": -0.24659712638547576,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -1.6871460624178196,
+              "left": {
+                "value": 7.142857142857143
+              },
+              "right": {
+                "value": 4.333333333333333
+              }
+            },
+            "right": {
+              "value": 2.8333333333333335
+            }
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": 2.164062564246979,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 0.5921798418356312,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -0.7287959249721396,
+                "left": {
+                  "value": 7.953846153846154
+                },
+                "right": {
+                  "value": 9.030303030303031
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": 1.2299713886763755,
+                "left": {
+                  "value": 8.430555555555555
+                },
+                "right": {
+                  "value": 5.714285714285714
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 1.305470491976414,
+              "left": {
+                "value": 3.7142857142857144
+              },
+              "right": {
+                "value": 6.666666666666667
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 2.23,
+            "rmse": 2.79,
+            "r2": 0.142
+          },
+          "test": {
+            "mae": 2.6,
+            "rmse": 3.16,
+            "r2": -0.061
+          }
+        }
+      }
+    },
+    "total_sales": {
+      "ridge": {
+        "weights": [
+          18174.153086075108,
+          -451.41231318359627,
+          -587.9769500338963,
+          2025.1130939167458,
+          -665.9046392951609,
+          2886.1292514241254
+        ],
+        "metrics": {
+          "train": {
+            "mae": 5728.35,
+            "rmse": 7322.49,
+            "r2": 0.136
+          },
+          "test": {
+            "mae": 6239.53,
+            "rmse": 7762.97,
+            "r2": 0.078
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": -0.6382412483098684,
+          "left": {
+            "featureIndex": 5,
+            "threshold": -1.566275254872962,
+            "left": {
+              "featureIndex": 1,
+              "threshold": -0.24659712638547576,
+              "left": {
+                "featureIndex": 1,
+                "threshold": -0.5239879347735579,
+                "left": {
+                  "value": 6787.6900000000005
+                },
+                "right": {
+                  "value": 9466.295
+                }
+              },
+              "right": {
+                "value": 3749.7714285714283
+              }
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": -1.2225914853868565,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -1.226165215101287,
+                "left": {
+                  "value": 12073.90296296296
+                },
+                "right": {
+                  "value": 5805.58
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -0.43812887503438974,
+                "left": {
+                  "value": 17309.36655172414
+                },
+                "right": {
+                  "value": 14032.940175438596
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": 0.41602416036972895,
+            "left": {
+              "featureIndex": 1,
+              "threshold": -1.6599693405533245,
+              "left": {
+                "featureIndex": 1,
+                "threshold": -1.7194102280650565,
+                "left": {
+                  "value": 16287.48625
+                },
+                "right": {
+                  "value": 8735.213333333333
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": -0.6361515250022776,
+                "left": {
+                  "value": 29402.93
+                },
+                "right": {
+                  "value": 19452.89409574468
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 0.9356160807923044,
+              "left": {
+                "featureIndex": 5,
+                "threshold": 2.2030555897328234,
+                "left": {
+                  "value": 24052.224537037026
+                },
+                "right": {
+                  "value": 11483.911666666667
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": 0.8373456936095911,
+                "left": {
+                  "value": 20566.636923076927
+                },
+                "right": {
+                  "value": 16337.012380952385
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 5056.97,
+            "rmse": 6463.61,
+            "r2": 0.327
+          },
+          "test": {
+            "mae": 6136.71,
+            "rmse": 7497.06,
+            "r2": 0.14
+          }
+        }
+      }
+    },
+    "category:Fruits & Vegetables": {
+      "ridge": {
+        "weights": [
+          1.4226945014354537,
+          -0.021907435151326062,
+          -0.4316200570067855,
+          1.0967257242869513,
+          0.2177821116653464,
+          -0.24206415308066664
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.57,
+            "rmse": 2.01,
+            "r2": 0.024
+          },
+          "test": {
+            "mae": 1.6,
+            "rmse": 1.85,
+            "r2": -0.149
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": 1.2151313246079765,
+          "left": {
+            "featureIndex": 2,
+            "threshold": 2.543510357089742,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 1.9572717109581566,
+              "left": {
+                "featureIndex": 5,
+                "threshold": 0.0007295102923390844,
+                "left": {
+                  "value": 1.8638297872340426
+                },
+                "right": {
+                  "value": 1.5128205128205128
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -0.5438015639441356,
+                "left": {
+                  "value": 6.5
+                },
+                "right": {
+                  "value": 2.3636363636363638
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": -0.2598062124991939,
+              "left": {
+                "featureIndex": 1,
+                "threshold": -1.2967194724260735,
+                "left": {
+                  "value": 4
+                },
+                "right": {
+                  "value": 1.2857142857142858
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": 1.1308609607909967,
+                "left": {
+                  "value": 0
+                },
+                "right": {
+                  "value": 3
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": -1.9043374336571113,
+            "left": {
+              "value": 3
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": -0.17394715276002526,
+              "left": {
+                "featureIndex": 1,
+                "threshold": -1.3165331015966508,
+                "left": {
+                  "value": 0.75
+                },
+                "right": {
+                  "value": 0.25
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": 2.056472099751086,
+                "left": {
+                  "value": 1.0869565217391304
+                },
+                "right": {
+                  "value": 0.375
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.48,
+            "rmse": 1.96,
+            "r2": 0.078
+          },
+          "test": {
+            "mae": 1.69,
+            "rmse": 2.04,
+            "r2": -0.396
+          }
+        }
+      }
+    },
+    "category:Dairy & Breakfast": {
+      "ridge": {
+        "weights": [
+          1.7291267413909315,
+          0.054998271605504245,
+          -0.3159120075882624,
+          0.6490638762836999,
+          0.7202645151831168,
+          -0.03424697893751811
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.7,
+            "rmse": 2.1,
+            "r2": 0.009
+          },
+          "test": {
+            "mae": 1.68,
+            "rmse": 2.14,
+            "r2": -0.017
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 1,
+          "threshold": 1.463979525341033,
+          "left": {
+            "featureIndex": 5,
+            "threshold": -1.566275254872962,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 1.9768129991625427,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 0.5327389543238988,
+                "left": {
+                  "value": 0
+                },
+                "right": {
+                  "value": 1.25
+                }
+              },
+              "right": {
+                "value": 6
+              }
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": -1.5339299723728597,
+              "left": {
+                "value": 7
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 0.9686387960766,
+                "left": {
+                  "value": 1.9264305177111716
+                },
+                "right": {
+                  "value": 1.2987012987012987
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": 0.2521625957940707,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 1.530024955909624,
+              "left": {
+                "value": 6.666666666666667
+              },
+              "right": {
+                "value": 2.5
+              }
+            },
+            "right": {
+              "value": 1.5714285714285714
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.59,
+            "rmse": 1.98,
+            "r2": 0.118
+          },
+          "test": {
+            "mae": 1.61,
+            "rmse": 2.12,
+            "r2": 0.005
+          }
+        }
+      }
+    },
+    "category:Snacks & Munchies": {
+      "ridge": {
+        "weights": [
+          1.5644110454364175,
+          -0.23973885460881939,
+          -0.04254872247585065,
+          0.17980225730971042,
+          -0.6096391286179568,
+          -0.12394220650753074
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.52,
+            "rmse": 1.87,
+            "r2": 0.026
+          },
+          "test": {
+            "mae": 1.43,
+            "rmse": 1.71,
+            "r2": 0.015
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 1,
+          "threshold": -0.9532832334694001,
+          "left": {
+            "featureIndex": 1,
+            "threshold": -1.9703828642257024,
+            "left": {
+              "value": 0
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": 1.891247672148738,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -2.2035500061530664,
+                "left": {
+                  "value": 6
+                },
+                "right": {
+                  "value": 2.197802197802198
+                }
+              },
+              "right": {
+                "value": 0
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": -1.7454311711925825,
+            "left": {
+              "value": 0
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 1.5564431281370603,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 1.2526341475215417,
+                "left": {
+                  "value": 1.56
+                },
+                "right": {
+                  "value": 0.782608695652174
+                }
+              },
+              "right": {
+                "value": 5
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.46,
+            "rmse": 1.81,
+            "r2": 0.084
+          },
+          "test": {
+            "mae": 1.47,
+            "rmse": 1.75,
+            "r2": -0.034
+          }
+        }
+      }
+    },
+    "category:Cold Drinks & Juices": {
+      "ridge": {
+        "weights": [
+          1.3307314147309386,
+          0.05918133106856779,
+          -0.012639333257627882,
+          -0.1751260679670896,
+          -0.4999471867509144,
+          -0.022722486028716706
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.43,
+            "rmse": 1.72,
+            "r2": 0.006
+          },
+          "test": {
+            "mae": 1.32,
+            "rmse": 1.57,
+            "r2": 0.024
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": -2.5063478848384806,
+          "left": {
+            "value": 6
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": -1.3538049090120372,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -2.192707673629624,
+              "left": {
+                "value": 2.5
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -1.8118738308610838,
+                "left": {
+                  "value": 1.5
+                },
+                "right": {
+                  "value": 0.4
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": -1.3529720482735046,
+              "left": {
+                "value": 6
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 1.2130068891803867,
+                "left": {
+                  "value": 1.2493702770780857
+                },
+                "right": {
+                  "value": 1.7884615384615385
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.37,
+            "rmse": 1.67,
+            "r2": 0.057
+          },
+          "test": {
+            "mae": 1.35,
+            "rmse": 1.65,
+            "r2": -0.076
+          }
+        }
+      }
+    },
+    "category:Instant & Frozen Food": {
+      "ridge": {
+        "weights": [
+          1.1463105102997124,
+          0.003395439192215967,
+          -0.1807361881817184,
+          0.5649661873268119,
+          0.41378130608744673,
+          -0.1550139310290544
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.41,
+            "rmse": 1.72,
+            "r2": 0.013
+          },
+          "test": {
+            "mae": 1.46,
+            "rmse": 1.68,
+            "r2": -0.015
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": 0.19298405459069984,
+          "left": {
+            "featureIndex": 5,
+            "threshold": 0.19233290892239277,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -1.3098147190949976,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -2.192707673629624,
+                "left": {
+                  "value": 2.6666666666666665
+                },
+                "right": {
+                  "value": 0.6
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": -1.2936875066125024,
+                "left": {
+                  "value": 4.5
+                },
+                "right": {
+                  "value": 1.49609375
+                }
+              }
+            },
+            "right": {
+              "value": 6
+            }
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": 2.0953742677018177,
+            "left": {
+              "featureIndex": 5,
+              "threshold": 1.8676247130194499,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 1.463979525341033,
+                "left": {
+                  "value": 0.9382716049382716
+                },
+                "right": {
+                  "value": 2
+                }
+              },
+              "right": {
+                "value": 2.2
+              }
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": 4.295701481369824,
+              "left": {
+                "value": 0
+              },
+              "right": {
+                "value": 0.5
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.33,
+            "rmse": 1.66,
+            "r2": 0.082
+          },
+          "test": {
+            "mae": 1.43,
+            "rmse": 1.67,
+            "r2": -0.009
+          }
+        }
+      }
+    },
+    "category:Grocery & Staples": {
+      "ridge": {
+        "weights": [
+          1.6161877901857475,
+          -0.14784642278371218,
+          0.12269574103082208,
+          -0.36544316537311,
+          -0.45199558117256083,
+          -0.09247838822089148
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.5,
+            "rmse": 1.79,
+            "r2": 0.013
+          },
+          "test": {
+            "mae": 1.49,
+            "rmse": 1.78,
+            "r2": -0.018
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 1,
+          "threshold": -0.9268650612419636,
+          "left": {
+            "featureIndex": 1,
+            "threshold": -1.5344830224730015,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -0.4970334958222965,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -1.511276160284773,
+                "left": {
+                  "value": 0.8
+                },
+                "right": {
+                  "value": 3.272727272727273
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": 0.4374816815788325,
+                "left": {
+                  "value": 1.5
+                },
+                "right": {
+                  "value": 0.5333333333333333
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": -1.5212739363592833,
+              "left": {
+                "value": 6
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -1.065560465436005,
+                "left": {
+                  "value": 2.6875
+                },
+                "right": {
+                  "value": 2
+                }
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": -0.7089151403656132,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -0.9801532958612773,
+              "left": {
+                "value": 1
+              },
+              "right": {
+                "value": 0
+              }
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": -1.0433295686096042,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -1.7454311711925825,
+                "left": {
+                  "value": 0.5714285714285714
+                },
+                "right": {
+                  "value": 2.225
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 1.5564431281370603,
+                "left": {
+                  "value": 1.356687898089172
+                },
+                "right": {
+                  "value": 3.5
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.38,
+            "rmse": 1.7,
+            "r2": 0.118
+          },
+          "test": {
+            "mae": 1.52,
+            "rmse": 1.86,
+            "r2": -0.113
+          }
+        }
+      }
+    },
+    "category:Household Care": {
+      "ridge": {
+        "weights": [
+          1.7169716904209689,
+          0.04176182261156722,
+          0.0839415502457065,
+          0.10582201327128414,
+          0.6504880352409197,
+          -0.29203202146763074
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.65,
+            "rmse": 2.07,
+            "r2": 0.025
+          },
+          "test": {
+            "mae": 1.65,
+            "rmse": 2.02,
+            "r2": 0.002
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": -0.28713744678956343,
+          "left": {
+            "featureIndex": 5,
+            "threshold": -1.6523930552372323,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 0.19590725842408432,
+              "left": {
+                "value": 0.2222222222222222
+              },
+              "right": {
+                "value": 2
+              }
+            },
+            "right": {
+              "featureIndex": 2,
+              "threshold": 3.360336204033084,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -0.7287959249721396,
+                "left": {
+                  "value": 1.9361702127659575
+                },
+                "right": {
+                  "value": 2.6263736263736264
+                }
+              },
+              "right": {
+                "value": 6
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 2,
+            "threshold": 3.2040058983979947,
+            "left": {
+              "featureIndex": 5,
+              "threshold": 2.164062564246979,
+              "left": {
+                "featureIndex": 5,
+                "threshold": 2.0953742677018177,
+                "left": {
+                  "value": 1.3962264150943395
+                },
+                "right": {
+                  "value": 6
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -1.514669393302424,
+                "left": {
+                  "value": 2
+                },
+                "right": {
+                  "value": 0
+                }
+              }
+            },
+            "right": {
+              "value": 4.25
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.57,
+            "rmse": 1.98,
+            "r2": 0.109
+          },
+          "test": {
+            "mae": 1.79,
+            "rmse": 2.19,
+            "r2": -0.17
+          }
+        }
+      }
+    },
+    "category:Personal Care": {
+      "ridge": {
+        "weights": [
+          1.4564387509259176,
+          -0.04725147702391645,
+          -0.05555347872138405,
+          0.34320453007350005,
+          -0.38441389459989184,
+          -0.1211151063061272
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.47,
+            "rmse": 1.79,
+            "r2": 0.01
+          },
+          "test": {
+            "mae": 1.59,
+            "rmse": 1.94,
+            "r2": -0.003
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 1,
+          "threshold": -1.8647101753159565,
+          "left": {
+            "featureIndex": 5,
+            "threshold": 1.2833047617874995,
+            "left": {
+              "value": 0
+            },
+            "right": {
+              "value": 1
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": -1.1712331543457506,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -0.06264362044873194,
+              "left": {
+                "featureIndex": 1,
+                "threshold": -1.197651326573187,
+                "left": {
+                  "value": 1.34375
+                },
+                "right": {
+                  "value": 9
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": -0.03140377129250004,
+                "left": {
+                  "value": 8
+                },
+                "right": {
+                  "value": 2.2222222222222223
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": 0.7243189199294586,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -1.348444314440391,
+                "left": {
+                  "value": 2.217391304347826
+                },
+                "right": {
+                  "value": 1.534013605442177
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -0.7353333125930496,
+                "left": {
+                  "value": 0.375
+                },
+                "right": {
+                  "value": 1.1265822784810127
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.37,
+            "rmse": 1.66,
+            "r2": 0.141
+          },
+          "test": {
+            "mae": 1.59,
+            "rmse": 1.97,
+            "r2": -0.031
+          }
+        }
+      }
+    },
+    "category:Baby Care": {
+      "ridge": {
+        "weights": [
+          1.181589614376841,
+          -0.040387380872876084,
+          0.0013218520508263823,
+          -0.3097289119227856,
+          -0.35378187894570695,
+          -0.022737777729938402
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.26,
+            "rmse": 1.51,
+            "r2": 0.009
+          },
+          "test": {
+            "mae": 1.22,
+            "rmse": 1.42,
+            "r2": -0.044
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": -1.2225914853868565,
+          "left": {
+            "featureIndex": 1,
+            "threshold": -0.5570106500578534,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -1.7189461997072462,
+              "left": {
+                "value": 2.2
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -0.887237802900809,
+                "left": {
+                  "value": 0.2
+                },
+                "right": {
+                  "value": 2.5
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 1,
+              "threshold": 1.3781204656018646,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -1.2737139918102391,
+                "left": {
+                  "value": 0
+                },
+                "right": {
+                  "value": 0.3333333333333333
+                }
+              },
+              "right": {
+                "value": 1.5
+              }
+            }
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": -1.1709692625203543,
+            "left": {
+              "value": 3.25
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": 0.08162300238763276,
+              "left": {
+                "featureIndex": 2,
+                "threshold": 2.434079143145179,
+                "left": {
+                  "value": 1.3478260869565217
+                },
+                "right": {
+                  "value": 0.5882352941176471
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": 0.5129253251533217,
+                "left": {
+                  "value": 1.2063492063492063
+                },
+                "right": {
+                  "value": 0.7037037037037037
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.17,
+            "rmse": 1.44,
+            "r2": 0.09
+          },
+          "test": {
+            "mae": 1.24,
+            "rmse": 1.42,
+            "r2": -0.042
+          }
+        }
+      }
+    },
+    "category:Pet Care": {
+      "ridge": {
+        "weights": [
+          1.7004787429798587,
+          -0.005118077224291641,
+          0.18023157817372668,
+          -0.40356337886486715,
+          -0.21006387016252753,
+          -0.09000204335658793
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.5,
+            "rmse": 1.83,
+            "r2": 0.005
+          },
+          "test": {
+            "mae": 1.55,
+            "rmse": 1.84,
+            "r2": -0.003
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": 1.2173119054506802,
+          "left": {
+            "featureIndex": 5,
+            "threshold": 1.2127841716175665,
+            "left": {
+              "featureIndex": 5,
+              "threshold": -0.5410388286618552,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -0.6382412483098684,
+                "left": {
+                  "value": 1.5038167938931297
+                },
+                "right": {
+                  "value": 0.6153846153846154
+                }
+              },
+              "right": {
+                "featureIndex": 5,
+                "threshold": -0.4680499421213621,
+                "left": {
+                  "value": 3.5454545454545454
+                },
+                "right": {
+                  "value": 1.7826086956521738
+                }
+              }
+            },
+            "right": {
+              "value": 5
+            }
+          },
+          "right": {
+            "featureIndex": 1,
+            "threshold": 1.4309568100567374,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 0.9686387960766,
+              "left": {
+                "featureIndex": 5,
+                "threshold": 1.5208517873395146,
+                "left": {
+                  "value": 1.1666666666666667
+                },
+                "right": {
+                  "value": 0.5833333333333334
+                }
+              },
+              "right": {
+                "value": 0.125
+              }
+            },
+            "right": {
+              "value": 2
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.43,
+            "rmse": 1.76,
+            "r2": 0.082
+          },
+          "test": {
+            "mae": 1.55,
+            "rmse": 1.85,
+            "r2": -0.023
+          }
+        }
+      }
+    },
+    "category:Pharmacy": {
+      "ridge": {
+        "weights": [
+          1.6365532340068443,
+          -0.024418616925248687,
+          -0.0004317224386989737,
+          -0.043956439243902835,
+          0.3639136024463329,
+          -0.1259880680935611
+        ],
+        "metrics": {
+          "train": {
+            "mae": 1.64,
+            "rmse": 2.01,
+            "r2": 0.005
+          },
+          "test": {
+            "mae": 1.61,
+            "rmse": 1.97,
+            "r2": 0.003
+          }
+        }
+      },
+      "decision_tree": {
+        "tree": {
+          "featureIndex": 5,
+          "threshold": -1.4097731506414277,
+          "left": {
+            "featureIndex": 1,
+            "threshold": 1.1667750877823733,
+            "left": {
+              "featureIndex": 2,
+              "threshold": 1.9768129991625427,
+              "left": {
+                "featureIndex": 1,
+                "threshold": -0.6230560806264445,
+                "left": {
+                  "value": 0.5833333333333334
+                },
+                "right": {
+                  "value": 0
+                }
+              },
+              "right": {
+                "value": 2
+              }
+            },
+            "right": {
+              "value": 1.3333333333333333
+            }
+          },
+          "right": {
+            "featureIndex": 5,
+            "threshold": -0.10925353596151972,
+            "left": {
+              "featureIndex": 1,
+              "threshold": 1.0478933127589094,
+              "left": {
+                "featureIndex": 1,
+                "threshold": 0.31478903344754855,
+                "left": {
+                  "value": 2.1636363636363636
+                },
+                "right": {
+                  "value": 1.263157894736842
+                }
+              },
+              "right": {
+                "featureIndex": 4,
+                "threshold": 0.5,
+                "left": {
+                  "value": 2.5128205128205128
+                },
+                "right": {
+                  "value": 9
+                }
+              }
+            },
+            "right": {
+              "featureIndex": 5,
+              "threshold": 2.056472099751086,
+              "left": {
+                "featureIndex": 5,
+                "threshold": -0.09317175224658139,
+                "left": {
+                  "value": 0.16666666666666666
+                },
+                "right": {
+                  "value": 1.5350877192982457
+                }
+              },
+              "right": {
+                "featureIndex": 1,
+                "threshold": -1.6533647974964656,
+                "left": {
+                  "value": 2
+                },
+                "right": {
+                  "value": 0.2727272727272727
+                }
+              }
+            }
+          }
+        },
+        "metrics": {
+          "train": {
+            "mae": 1.52,
+            "rmse": 1.91,
+            "r2": 0.104
+          },
+          "test": {
+            "mae": 1.68,
+            "rmse": 2.07,
+            "r2": -0.101
+          }
+        }
+      }
+    }
+  }
+}
